@@ -1,0 +1,19 @@
+// app global css in SCSS form
+.drawer_normal {
+  background: #125d70;
+  color: white;
+}
+#nodata {
+  display: block;
+  position: relative;
+  margin: auto;
+  width: 50%;
+  height: 86px;
+  padding: 40px;
+  border: none;
+  border-radius: 3px;
+  font-size: 26px;
+  font-style: italic;
+  text-align: center;
+  color: #5f5d5d;
+}
