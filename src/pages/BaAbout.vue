@@ -11,15 +11,17 @@
   >
     <q-card flat>
       <q-card-section style="font-weight: bolder">
-        {{ $t("ABOUT_TEXT_TITLE") }}
+        <span v-html="$t('ABOUT_TEXT_TITLE')"></span>
       </q-card-section>
       <q-card-section>
-        {{ $t("ABOUT_TEXT_1") }}
+        <span v-html="$t('ABOUT_TEXT_1')"></span>
       </q-card-section>
       <q-card-section>
-        {{ $t("ABOUT_TEXT_2") }}
+        <span v-html="$t('ABOUT_TEXT_2')"></span>
       </q-card-section>
-      <q-card-section><span v-html="$t('ABOUT_TEXT_3')"></span></q-card-section>
+      <q-card-section
+        ><span v-html="$t('ABOUT_TEXT_3')"></span>
+      </q-card-section>
       <q-card-section style="font-weight: bolder">
         {{ $t("ABOUT_TEXT_GITHUB") }}
       </q-card-section>

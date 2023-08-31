@@ -321,7 +321,19 @@
               <q-tab-panel name="timeline">
                 <iframe
                   style="fg-embedded"
-                  src="https://database.factgrid.de/query/embed.html#SELECT%20%3FEvent%20%3FEventLabel%20%3FChildLabel%20%3Fdate%20WHERE%0A%7B%0A%20%20%20%7B%20wd%3AQ1308%20p%3AP83%20%3Fstatement1.%0A%20%20%20%20%20%3Fstatement1%20ps%3AP83%20%3FEvent.%0A%20%20%20%20%20%3Fstatement1%20pq%3AP49%20%3Fdate.%0A%20%20%20%7D%0A%20%20UNION%0A%20%20%20%7B%20wd%3AQ1308%20p%3AP91%20%3Fstatement2.%0A%20%20%20%20%20%3Fstatement2%20ps%3AP91%20%3FEvent.%0A%20%20%20%20%20%3Fstatement2%20pq%3AP49%20%3Fdate.%0A%20%20%20%20%7D%0A%20%20UNION%0A%20%20%20%7B%20wd%3AQ1308%20p%3AP315%20%3Fstatement3.%0A%20%20%20%20%20%3Fstatement3%20ps%3AP315%20%3Fdate.%0A%20%20%20%20%20%3Fstatement3%20pq%3AP49%20%3Fstarttime.%0A%20%20%20%20OPTIONAL%20%7B%20%3Fstatement3%20pq%3AP50%20%3Fendtime.%20%7D%20%7D%0A%20%20UNION%0A%20%20%7B%20%20wd%3AQ1308%20p%3AP77%20%3Fstatement4.%0A%20%20%20%20%20%20%3Fstatement4%20ps%3AP77%20%3Fdate.%20%7D%0A%20%20UNION%0A%20%20%7B%20%20wd%3AQ1308%20p%3AP150%20%3Fstatement5.%0A%20%20%20%20%20%20%3Fstatement5%20ps%3AP150%20%3FChild.%0A%20%20%20%20%20%20%20%20%20%20%20%20%3FChild%20wdt%3AP77%20%3Fdate.%20%7D%0A%20%20%0A%20%20%0A%0A%20%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22de%22.%20%7D%0A%7D%0AORDER%20BY%20%3Fdate"
+                  v-bind:src="
+                    'https://database.factgrid.de/query/embed.html#SELECT%20%3FEvent%20%3FEventLabel%20%3Fdate%20WHERE%7B%7Bwd%3A' +
+                    this.$route.params.id +
+                    '%20p%3AP296%20%3Fstatement1.%3Fstatement1%20ps%3AP296%20%3FEvent.%3Fstatement1%20pq%3AP49%20%3Fdate.%7DUNION%7Bwd%3A' +
+                    this.$route.params.id +
+                    '%20p%3AP315%3Fstatement2.%3Fstatement2%20ps%3AP315%20%3Fdate.%20%3Fstatement2%20pq%3AP49%20%3Fstarttime.OPTIONAL%7B%3Fstatement2%20pq%3AP50%20%3Fendtime.%7D%7DUNION%7Bwd%3A' +
+                    this.$route.params.id +
+                    '%20p%3AP77%20%3Fstatement4.%20%3Fstatement4%20ps%3AP77%20%3Fdate.%7DUNION%7Bwd%3A' +
+                    this.$route.params.id +
+                    '%20p%3AP38%20%3Fstatement5.%20%3Fstatement5%20ps%3AP38%20%3Fdate.%7DUNION%7Bwd%3A' +
+                    this.$route.params.id +
+                    '%20p%3AP37%20%3Fstatement6.%20%3Fstatement6%20ps%3AP37%20%3Fdate.%7DSERVICE%20wikibase%3Alabel%7Bbd%3AserviceParam%20wikibase%3Alanguage%20%22de%22.%7D%7DORDER%20BY%20%3Fdate'
+                  "
                 ></iframe>
                 <vue-horizontal-timeline
                   v-if="false"
@@ -351,12 +363,13 @@
                     >
                   </q-card-section>
                   <q-card-section class="q-pa-sm" v-if="agentDetails.GND_ID">
-                    {{ $t("GND_ID") }}: {{ agentDetails.GND_ID.value }} (<a
+                    {{ $t("GND_ID") }}:
+                    <a
                       :href="'https://d-nb.info/' + agentDetails.GND_ID.value"
                       target="_blank"
                     >
-                      {{ $t("DIED") }}</a
-                    >)
+                      {{ agentDetails.GND_ID.value }}</a
+                    >
                   </q-card-section>
                   <q-card-section class="q-pa-sm">
                     {{ agentDetails.itemLabel.value }}
