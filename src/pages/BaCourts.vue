@@ -131,7 +131,9 @@
             </q-table>
           </div>
         </q-tab-panel>
-        <q-tab-panel name="map"><div id="map"></div></q-tab-panel>
+        <q-tab-panel name="map"
+          ><div v-if="renderComponent" :keep-alive="false" id="map"></div
+        ></q-tab-panel>
       </q-tab-panels>
     </div>
   </main>
@@ -191,6 +193,7 @@ export default {
       center: [12.0, 55.0],
       zoom: ref(5),
       nodata: ref(false),
+      renderComponent: true,
     };
   },
   setup() {
@@ -212,6 +215,11 @@ export default {
     };
   },
   methods: {
+    async forceRender() {
+      this.renderComponent = false;
+      await nextTick();
+      this.renderComponent = true;
+    },
     async loadAgents($event, courtId) {
       try {
         const url = addLang("/courts/Q" + courtId.split("/Q").pop());

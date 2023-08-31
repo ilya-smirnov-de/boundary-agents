@@ -301,12 +301,18 @@
 
               <q-tab-panel name="map">
                 <div class="mapbox-element">
-                  <MapboxMap :geodata="geodata" />
+                  <MapboxMap
+                    v-if="renderComponent"
+                    :keep-alive="false"
+                    :geodata="geodata"
+                  />
                 </div>
               </q-tab-panel>
 
               <q-tab-panel name="graph">
                 <BAGraph
+                  v-if="renderComponent"
+                  :keep-alive="false"
                   :agent="agentDetails.itemLabel.value"
                   :agent-link="agentDetails.item.value"
                   :groups="groups"
@@ -389,7 +395,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, nextTick } from "vue";
 import BAGraph from "../components/Graph.vue";
 import MapboxMap from "../components/MapboxMap.vue";
 import FactGridDate from "../components/FactGridDate.vue";
@@ -432,13 +438,14 @@ export default {
       tab: ref("details"),
       groups,
       agentId: ref(this.$route.params.id),
+      renderComponent: true,
     };
   },
 
   methods: {
     async forceRender() {
       this.renderComponent = false;
-      await this.$nextTick();
+      await nextTick();
       this.renderComponent = true;
     },
     addTimeline() {

@@ -19,7 +19,7 @@
       <q-card-section>
         {{ $t("ABOUT_TEXT_2") }}
       </q-card-section>
-      <q-card-section> {{ $t("ABOUT_TEXT_3") }} </q-card-section>
+      <q-card-section><span v-html="$t('ABOUT_TEXT_3')"></span></q-card-section>
       <q-card-section style="font-weight: bolder">
         {{ $t("ABOUT_TEXT_GITHUB") }}
       </q-card-section>

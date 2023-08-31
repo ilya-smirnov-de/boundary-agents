@@ -20,7 +20,7 @@
         <td style="width: 30%; min-height: 500px">
           <q-carousel
             top-right
-            keep-alive="true"
+            :keep-alive="true"
             class="carousel rounded-borders"
             animated
             v-model="slide"

@@ -53,8 +53,14 @@ export default {
   INTRO_TEXT_1: `The presence of people who came to the Holy Roman Empire from non-European regions in early modern Europe has been the subject of intensive research for decades. Their stories are as multifaceted as they are mysterious – threads that seem to lead nowhere at one end and the other. Despite often the most adverse circumstances that determined their lives in detail, they managed to shape an image of belonging as an integral part of the baroque European aristocracy that is still influential today. While at the same time cosmographs and encyclopedias reported on the "wild people" in remote, rough regions of the world, they embodied the highest elegance at the European courts.`,
   INTRO_TEXT_2: `How does this fit together and how is it to be interpreted? Using the data infrastructure of the FactGrid database, we aim to build a solid foundation for researching these questions by collating and retrieving all knowledge about these mysterious "strangers" between the 1600s and 1800s. It is primarily about capturing the individual biographies, movements and relationships, classifying them in the historical context and giving them a comprehensible visual form.`,
   ABOUT_TEXT_TITLE: "About Boundary-Agents",
-  ABOUT_TEXT_1: ``,
-  ABOUT_TEXT_2: ``,
-  ABOUT_TEXT_3: `Contact: Dr. Anne Kuhlmann-Smirnov, akuhlman(at)uni-bremen.de`,
+  ABOUT_TEXT_1: `At the end of the 2010s, the idea arose to develop a database in which all available information on non-Europeans who came to the early modern German-speaking area should be bundled. In addition to those called "Moors" in the early modern period - some of whom had no African background - these included "Turks", often prisoners of the so-called Turkish wars, as well as "Indians" – meaning not only people from India but also from the Americas  -, "Hajduks" and others.`,
+  ABOUT_TEXT_2: `The Boundary Agents website is still under construction. We would like to thank our partners at the State Palaces and Gardens of Baden-Württemberg (Cem Alaçam), the Prussian Palaces and Gardens Foundation Berlin-Brandenburg (Carolin Alff, Jürgen Luh) and the State Palaces, Castles and Gardens of Saxony (André Thieme, Matthias Donath) for their committed support in the development of our project. We are particularly grateful to the Gotha Research Center and its support and to Dr. Olaf Simons, who created the FactGrid database that hosts the content reproduced in Boundary Agents. Special thanks also to Rashid-Sascha Pegah, the great reader of the archives of the German principalities, who tracked down a significant part of the sources. The project was financed by the German Federal Ministry of Education and Research via the Prototype Fund of the German Aerospace Society. We thank them all! `,
+  ABOUT_TEXT_3: `<b>Contact:</b><br />
+  Dr. Anne Kuhlmann-Smirnov<br />
+  Research associate<br />
+  at the Gotha Research Centre at the University of Erfurt<br />
+  Schlossberg 2<br />
+  99867 Gotha<br />
+  Email: akuhlman(at)uni-bremen.de`,
   ABOUT_TEXT_GITHUB: `Source code on GitHub:`,
 };
